@@ -15,7 +15,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --fresh-25:#7883e7 ;
+  /* --fresh-25:#7883e7 ; */
+  --fresh-25:#39cabb;
+  --fresh-50:#ebf7f6;
 }
 
 span,
@@ -61,4 +63,14 @@ body {
   100% {
       border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
+}
+
+
+.shadow-salons {
+  box-shadow:0 3px 17px 1px rgba(137, 173, 255, 0.2);
+}
+
+
+.shadow-barbers {
+  box-shadow:0 15px 35px -5px rgba(137, 173, 255, 0.2);
 }

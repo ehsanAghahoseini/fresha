@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         'fresh': {
           25: 'var(--fresh-25)',
+          50: 'var(--fresh-50)',
         },
       },
     },
