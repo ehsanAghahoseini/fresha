@@ -1,13 +1,11 @@
-import { CSvgLocation, CSvgStar } from "@/icons"
 import "keen-slider/keen-slider.min.css"
-import { useKeenSlider } from "keen-slider/react"
 
 export const DownloadApp = () => {
 
 
     return (
         <section className="w-full  mb-5 lg:mt-10 mt-0 flex items-center justify-center pt-5">
-            <div className="w-full max-w-[1400px]  flex flex-wrap items-center px-3">
+            <div className="w-full max-w-[1400px]  flex flex-wrap items-center md:px-5 px-3">
                 <div className="lg:w-[50%] w-full flex flex-col lg:order-1 order-2 lg:mt-0 mt-10">
                     <h4 className="lg:text-[40px] md:text-[30px] text-[20px]">Better Barbers , Better Salons , Everywhere</h4>
                     <span className="text-gray-500">
