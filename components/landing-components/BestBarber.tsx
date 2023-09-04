@@ -37,7 +37,7 @@ export const BestBarber = () => {
                                         <div className="flex lg:flex-row flex-col items-center">
                                             <div className="flex items-center">
                                                 {new Array(5).fill("").map((item: any, index: number) =>
-                                                    <CSvgStar className="w-[15px] fill-[gold]" />
+                                                    <CSvgStar key={index} className="w-[15px] fill-[gold]" />
                                                 )}
                                                 <span className="text-gray-400 text-sm mx-2">(32)</span>
                                             </div>
