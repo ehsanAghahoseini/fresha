@@ -1,4 +1,4 @@
-import { BestBarber, BestSalons, DownloadApp, Slider } from "@/components";
+import { BestBarber, BestSalons, Reviews, DownloadApp, Slider } from "@/components";
 
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
 
       <BestSalons title="Top Rated Salons" />
       <DownloadApp />
+      <Reviews />
       {/* <BestSalons title="New Salons" /> */}
     </main>
   )

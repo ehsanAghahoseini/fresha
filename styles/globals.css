@@ -74,3 +74,7 @@ body {
 .shadow-barbers {
   box-shadow:0 15px 35px -5px rgba(137, 173, 255, 0.2);
 }
+
+.reviews-section .keen-slider__slide {
+  overflow: visible !important;
+}

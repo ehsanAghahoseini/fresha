@@ -1,3 +1,4 @@
+import { Footer } from "."
 import { Nav } from "./Nav"
 
 export const Layout=({ children }: any)=>{
@@ -5,6 +6,7 @@ export const Layout=({ children }: any)=>{
         <div className="w-full flex flex-col">
             <Nav/>
             {children}
+            <Footer />
         </div>
     )
 }
