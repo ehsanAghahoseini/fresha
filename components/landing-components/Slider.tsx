@@ -2,7 +2,7 @@ import { CSvgLocation, CSvgSearch , CSvgCalender , CSvgClock } from "@/icons"
 
 export const Slider = () => {
     return (
-        <section className="w-full md:min-h-screen min-h-fit bg-slider bg-fresh-50 flex items-center justify-center md:pt-0 pt-[70px]">
+        <section className="w-full md:min-h-screen min-h-fit bg-slider bg-fresh-50  rounded-b-[30px] flex items-center justify-center md:pt-0 pt-[70px]">
             <div className="w-full max-w-[1400px]  flex flex-wrap justify-between items-center px-5">
                 <div className="md:w-[55%] w-full flex flex-col order-2 md:order-1 md:mt-0 mt-5">
                     <h1 className="lg:text-[45px] md:text-[30px] text-[20px] text-center md:mb-6 mb-3 flex flex-col font-bold">
