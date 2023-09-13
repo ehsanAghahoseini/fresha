@@ -78,3 +78,131 @@ body {
 .reviews-section .keen-slider__slide {
   overflow: visible !important;
 }
+
+
+
+/* Style For CModal (Custom modal) */
+
+.CModal {
+  position: fixed;
+  background: #0000009a;
+  z-index: -1000;
+  transition: all 0.6s;
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.CModal-active {
+  top: 0;
+  visibility: unset;
+  transition: all 0.3s;
+  overflow: auto;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.CModal-cont {
+  margin: 0 auto;
+  width: 500px;
+  max-width: 95%;
+  min-height: 50px;
+  background: #fff;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+}
+
+.CModel-head {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.CModel-head h4 {
+  font-size: 14px;
+}
+
+.CModel-Bottom {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.CModel-Bottom-btn-ok {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 3px;
+  background: var(--fresh-25);
+  color: #fff;
+  cursor: pointer;
+}
+
+.CModel-Bottom-btn-cancel {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border: 1px solid #ff3a44;
+  border-radius: 3px;
+  background: none;
+  color: #ff3a44;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.CModel-Bottom-btn-del {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  /* border:1px solid tomato; */
+  border-radius: 3px;
+  background: #ff3a44;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.CModel-Bottom-btn-info {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border: 1px solid var(--fresh-25);
+  border-radius: 3px;
+  background: none;
+  color: var(--fresh-25);
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+  .CModal-cont {
+    width: 95%;
+  }
+}
