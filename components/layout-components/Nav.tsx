@@ -38,10 +38,10 @@ export const Nav = () => {
                         )}
                     </div>
                     <div className="lg:flex hidden items-center">
-                        <button  className="w-[120px] h-[40px] rounded-lg border border-fresh-25 text-fresh-25 flex items-center justify-center bg-transparent hover:bg-fresh-25 hover:text-white transition-all">For business</button>
+                        <button onClick={() => { setVisibleAuthModal(true) }} className="w-[120px] h-[40px] rounded-lg border border-fresh-25 text-fresh-25 flex items-center justify-center bg-transparent hover:bg-fresh-25 hover:text-white transition-all">For business</button>
                         <button onClick={() => { setVisibleAuthModal(true) }} className="w-[120px] h-[40px] rounded-lg border border-fresh-25 bg-fresh-25 text-white flex items-center justify-center ml-2">Register</button>
                     </div>
-                    <button className="w-[30px] h-[30px] border border-fresh-25 rounded-lg lg:hidden flex items-center justify-center">
+                    <button onClick={() => { setVisibleAuthModal(true) }} className="w-[30px] h-[30px] border border-fresh-25 rounded-lg lg:hidden flex items-center justify-center">
                         <CSvgMore className="stroke-fresh-25 w-[23px]" />
                     </button>
                 </nav>
