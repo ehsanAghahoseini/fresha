@@ -1,4 +1,5 @@
 import { CSvgLocation, CSvgSearch , CSvgCalender , CSvgClock } from "@/icons"
+import Image from 'next/image'
 
 export const Slider = () => {
     return (
@@ -46,7 +47,8 @@ export const Slider = () => {
                     </form>
                 </div>
                 <div className="slider md:w-[40%] w-full md:max-w-[550px] max-w-[300px]  border md:mx-[0] mx-auto overflow-hidden order-1 md:order-2">
-                    <img src="slider/slider.webp" className="w-full h-full object-cover object-center" alt='banner' />
+                    {/* <img src="slider/slider.webp" className="w-full h-full object-cover object-center" alt='banner' /> */}
+                    <Image src="/slider/slider.webp" width={0} height={0} sizes="100%" style={{ width: '100%', height: 'auto' }} className=" object-cover object-center" alt="banner" />
                 </div>
             </div>
         </section>

@@ -22,8 +22,8 @@ export const DownloadApp = () => {
                     </button>
                 </div>
                 <div className="lg:w-[50%] w-full  flex items-center justify-center relative  lg:order-2 order-1">
-                    <img src="bg/circle.svg" className="w-[90%] absolute mx-auto z-[1] " alt='circle' />
-                    <img src="bg/app.png" className="w-[80%] z-[2]" alt='app' />
+                    <img src="bg/circle.svg" className="w-[90%] h-auto absolute mx-auto z-[1] " alt='circle' />
+                    <img src="bg/app.png" className="w-[80%] h-auto z-[2]" alt='app' />
                 </div>
             </div>
         </section>
