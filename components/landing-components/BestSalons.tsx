@@ -28,7 +28,7 @@ export const BestSalons = ({ title }: any) => {
                 <span className="mx-auto md:text-[30px] text-[20px] ">{title}</span>
                 <div ref={sliderRef} className="keen-slider py-5 md:mt-5 mt-0">
                     {new Array(8).fill("").map((item: any, index: number) =>
-                        <SalonsCards index={index} className="keen-slider__slide" />
+                        <SalonsCards key={index} index={index} className="keen-slider__slide" />
                     )}
                 </div>
             </div>
