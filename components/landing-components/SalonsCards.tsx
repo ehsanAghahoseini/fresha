@@ -6,7 +6,6 @@ declare type CardProps = {
 export const SalonsCards = ({ index, className }: CardProps) => {
 
     return (
-
         <div key={index} className={` ${className} shadow-salons flex flex-col shadow rounded-lg overflow-hidden relative `}>
             <img src="bg/card-bg.png" className="w-[60%] rotate-180 absolute bottom-0 right-0 z-[2] opacity-40  " alt='bg' />
             <div className="w-full pt-[50%] relative overflow-hidden">
