@@ -1,6 +1,7 @@
 import { CSvgLogo, CSvgMore } from "@/icons"
 import { useEffect, useMemo, useState } from "react";
 import { ModalAuth } from "@/components";
+import Link from "next/link";
 
 export const Nav = () => {
     const [visibleAuthModal, setVisibleAuthModal] = useState<boolean>(false)
@@ -9,7 +10,7 @@ export const Nav = () => {
         return (
             <ModalAuth visible={visibleAuthModal} setVisible={setVisibleAuthModal} />
         )
-    }, [visibleAuthModal ]);
+    }, [visibleAuthModal]);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -31,10 +32,12 @@ export const Nav = () => {
         <>
             <div id="nav-cont" className="fixed top-0  w-full flex justify-center bg-transparent transition-all duration-300 z-10">
                 <nav className="w-full flex items-center justify-between max-w-[1400px] lg:h-[80px] h-[50px] bg-transparent  px-3">
-                    <CSvgLogo className="md:w-[80px] w-[70px]" />
+                    <Link href={'/'} aria-label="landing">
+                        <CSvgLogo className="md:w-[80px] w-[70px]" />
+                    </Link>
                     <div className=" lg:flex hidden items-center ">
                         {['Home', 'Barbers', 'About us', 'Contact us'].map((item: any, index: number) =>
-                            <span className="w-[120px]" key={index}>{item}</span>
+                            <span className="w-[120px] cursor-pointer" key={index}>{item}</span>
                         )}
                     </div>
                     <div className="lg:flex hidden items-center">

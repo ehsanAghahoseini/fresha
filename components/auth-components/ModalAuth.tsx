@@ -36,9 +36,9 @@ export const ModalAuth = ({visible , setVisible}:any) => {
                             </div>
                             <div className="w-full  flex flex-col relative overflow-hidden">
                                 {authType == 'login' ?
-                                    <LoginForm />
+                                    <LoginForm setVisible={setVisible} />
                                     :
-                                    <RegisterForm />
+                                    <RegisterForm setVisible={setVisible} />
                                 }
                             </div>
                         </div>

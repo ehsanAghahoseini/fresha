@@ -2,7 +2,7 @@ import { CSvgLocation, CSvgStar } from "@/icons"
 import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
 
-export const BestBarber = () => {
+ export const BestBarber = () => {
     const [sliderRef] = useKeenSlider({
         breakpoints: {
             "(min-width: 500px)": {
@@ -24,11 +24,11 @@ export const BestBarber = () => {
                 <div ref={sliderRef} className="keen-slider py-10  md:mt-5 mt-0">
                     {new Array(10).fill("").map((item: any, index: number) =>
                         <div key={index} className="keen-slider__slide pb-5 shadow-barbers rounded-lg overflow-hidden relative ">
-                            <img src="bg/card-bg.png" className="w-[50%] absolute top-0 left-0 opacity-60 z-[2]" />
-                            <img src="bg/card-bg-2.png" className="w-[40%] absolute bottom-0 right-0 z-[2] opacity-70  " />
+                            <img src="bg/card-bg.png" className="w-[50%] absolute top-0 left-0 opacity-60 z-[2]" alt='bg' />
+                            <img src="bg/card-bg-2.png" className="w-[40%] absolute bottom-0 right-0 z-[2] opacity-70  " alt='bg' />
                             <div className="w-full h-full flex flex-wrap z-[2] relative lg:mx-5 mx-0">
                                 <div className="lg:w-[80px] w-full ">
-                                    <img src="barber/1.webp" className="w-[80px] h-[80px] mx-auto rounded-[15px] shadow object-cover object-center mt-7" />
+                                    <img src="barber/1.webp" className="w-[80px] h-[80px] mx-auto rounded-[15px] shadow object-cover object-center mt-7" alt='barber' />
                                 </div>
                                 <div className="lg:w-[calc(100%-80px)] w-full flex flex-col  lg:pt-7 pt-3 px-3">
                                     <h3 className="lg:text-xl text-lg">Mary Allen</h3>

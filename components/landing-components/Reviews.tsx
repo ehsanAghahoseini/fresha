@@ -1,4 +1,3 @@
-import { CSvgLocation, CSvgStar } from "@/icons"
 import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
 
@@ -25,7 +24,7 @@ export const Reviews = () => {
                         <div key={index} className="keen-slider__slide overflow-[visible !important] pb-5 shadow-barbers border-t-[4px] border-fresh-25 rounded-lg relative ">
                             <div className="w-full h-full  flex flex-col items-center relative ">
                                 <div className="w-[70px] h-[70px] mt-[-30px] bg-white border-2 border-fresh-25 flex items-center justify-center rounded-full ">
-                                    <img src="barber/3.jpg" className="w-[60px] h-[60px]  rounded-full  shadow object-cover object-center " />
+                                    <img src="barber/3.jpg" className="w-[60px] h-[60px]  rounded-full  shadow object-cover object-center " alt='avatar' />
                                 </div>
                                 <span className="mt-2">Dylan Ambrose</span>
                                 <span className="text-sm text-gray-400 mt-2">April 10, 2023</span>
