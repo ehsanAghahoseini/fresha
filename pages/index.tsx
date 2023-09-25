@@ -6,13 +6,12 @@ const Reviews = dynamic(() => import("@/components").then((mod) => mod.Reviews),
 const BestBarber = dynamic(() => import("@/components").then((mod) => mod.BestBarber), { ssr: false });
 const BestSalons = dynamic(() => import("@/components").then((mod) => mod.BestSalons), { ssr: false });
 
-
 export default function Home() {
   return (
     <main className={`w-full min-h-screen flex flex-col `}>
       <Slider />
       <BestBarber />
-      <BestSalons title="Top Rated Salons" />
+      <BestSalons title="Top Rated" />
       <DownloadApp />
       <Reviews />
     </main>

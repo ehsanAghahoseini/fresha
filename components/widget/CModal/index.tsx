@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export declare type ModalProps = {
+ declare type ModalProps = {
     uId: string,
     visible: boolean,
     setVisible: CallableFunction;

@@ -1,6 +1,5 @@
 import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
-import dynamic from "next/dynamic";
 import { SalonsCards } from "@/components";
 
 
