@@ -44,12 +44,12 @@ export const Slider = () => {
                                 <input className="w-[calc(100%-30px)] h-[40px] pl-1 text-sm border-none focus:outline-none" placeholder="Time" />
                             </div>
                         </div>
-                        <button className="md:w-[80px] w-full md:mt-0 mt-4 md:h-[40px] h-[35px] bg-fresh-25 rounded-md text-white text-sm">Search</button>
+                        <button aria-label="start" className="md:w-[80px] w-full md:mt-0 mt-4 md:h-[40px] h-[35px] bg-fresh-25 rounded-md text-white text-sm">Search</button>
                     </form>
                 </div>
-                <div className="slider md:w-[40%] w-full md:max-w-[550px] max-w-[300px]  border md:mx-[0] mx-auto overflow-hidden order-1 md:order-2">
+                <div className="slider md:w-[40%] w-full md:max-w-[550px] max-w-[300px] relative md:pt-[35%] pt-[70%] border md:mx-[0] mx-auto overflow-hidden order-1 md:order-2">
                     {/* <img src="slider/slider.webp" className="w-full h-full object-cover object-center" alt='banner' /> */}
-                    <CImage src={"/slider/slider.webp"} className="w-[95%] h-auto object-cover object-center" alt="banner" />
+                    <CImage src={"/slider/slider.webp"}  className="w-full h-full absolute top-0 object-cover object-center" alt="banner" />
                 </div>
             </div>
         </section>
