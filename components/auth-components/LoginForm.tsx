@@ -1,4 +1,4 @@
-import { useLogin } from "@/hooks";
+import { useLogin } from "@/hooks/auth-hooks";
 import { useRef } from 'react'
 import { BtnLoader } from "@/components";
 
@@ -17,7 +17,7 @@ export const LoginForm = ({setVisibleModal}:any) => {
         <>
             <form ref={formRef} onSubmit={handelLogin} className={`w-full flex flex-col pt-[30px]  `}>
                 <div className="w-full flex flex-col">
-                    <span className="text-xs mb-2 text-gray-500 ml-2 ">Email Address</span>
+                    <span onClick={()=>{setVisibleModal(false)}} className="text-xs mb-2 text-gray-500 ml-2 ">Email Address</span>
                     <input name="email" type="text" placeholder="Enter your email " className="w-full h-[40px] rounded-full border border-gray-300 px-[10px] focus:outline-none text-sm" required />
                 </div>
                 <div className="w-full flex flex-col mt-5">

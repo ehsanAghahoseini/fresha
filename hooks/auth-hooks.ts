@@ -1,4 +1,4 @@
-import { LoginApi, RegisterApi } from "@/api";
+import { LoginApi, RegisterApi } from "@/api/auth-api";
 import { useMutation } from "react-query"
 import { toast } from "react-toastify";
 
@@ -17,7 +17,9 @@ export const useLogin = (
     mutationFn: () => LoginApi(formRef.current['email'].value, formRef.current['password'].value),
     onSuccess: res => {
       if (res.data.status) {
-        toast('Bot updated succesfuly.', { type: "success" })
+        toast(res.data.message, { type: "success" })
+        localStorage.setItem('user', JSON.stringify(res.data.user))
+        localStorage.setItem('token', res.data.token)
         setVisibleModal(false)
       }
       else {
@@ -45,7 +47,9 @@ export const useRegister = (
     ),
     onSuccess: res => {
       if (res.data.status) {
-        toast('Bot updated succesfuly.', { type: "success" })
+        toast(res.data.message, { type: "success" })
+        localStorage.setItem('user', JSON.stringify(res.data.user))
+        localStorage.setItem('token', res.data.token)
         setVisibleModal(false)
       }
       else {

@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "keen-slider/keen-slider.min.css"
 import { QueryClientProvider, QueryClient } from 'react-query';
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -1,8 +1,9 @@
-import {  useRegister } from "@/hooks";
+import {  useRegister } from "@/hooks/auth-hooks";
 import { useRef } from "react";
 import { BtnLoader } from "@/components";
+import { FormAuthType } from "@/types/auth-types";
 
-export const RegisterForm = ({setVisibleModal}:any) => {
+export const RegisterForm = ({setVisibleModal}:FormAuthType) => {
     const formRef: any = useRef()
     const { isLoading, mutate } = useRegister(formRef , setVisibleModal)
 
