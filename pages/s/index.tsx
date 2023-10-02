@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-const SalonsCards = dynamic(() => import("@/components").then((mod) => mod.SalonsCards), { ssr: false });
+const SalonsCards = dynamic(() => import("@/components/landing-components/SalonsCards"), { ssr: false });
 
 
 export default function Home() {
@@ -8,10 +8,16 @@ export default function Home() {
       <div className="w-full max-w-[1400px] flex flex-wrap items-center px-3">
         {new Array(8).fill("").map((item: any, index: number) =>
           <div key={index} className="lg:w-3/12 md:w-6/12 w-full p-2">
-            <SalonsCards index={index} className="w-full" />
+            <SalonsCards index={index} className="w-full" salon={salo} />
           </div>
         )}
       </div>
     </section>
   )
+}
+
+
+let salo = {
+  'name':'Salon 1' ,
+  'image_url':'/salons/1.avif'
 }

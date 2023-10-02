@@ -11,7 +11,7 @@ export const baseApi = async ({ url, method, body, token, formData }: InputProps
     const sendData: any = {};
     const headers: any = {}
 
-    if (token) headers['Authorization'] = `Bearer ${localStorage.getItem("_tk")}` ?? ""
+    if (token) headers['Authorization'] = `Bearer ${localStorage.getItem("token")}` ?? ""
     if (method != "GET") sendData.body = body
     if (!formData) {
         headers['Content-Type'] = "application/json"

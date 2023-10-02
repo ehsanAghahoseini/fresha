@@ -1,7 +1,6 @@
 import { useKeenSlider } from "keen-slider/react"
-import { SalonsCards } from "@/components";
+import  SalonsCards  from "@/components/landing-components/SalonsCards";
 import { useAllSalons } from "@/hooks/salon-hooks";
-import { useEffect } from "react";
 import dynamic from "next/dynamic";
 const SkeletonSalon = dynamic(() => import('@/components/widget/Skeleton/SkeletonSalon'))
 
@@ -23,11 +22,6 @@ export const BestSalons = ({ title }: any) => {
         slides: { perView: 1 },
     })
 
-
-    useEffect(() => {
-        console.log(salons?.data?.salons);
-
-    }, [salons])
 
     return (
         <section className="w-full md:my-5 my-2 flex items-center justify-center md:py-5 py-3">

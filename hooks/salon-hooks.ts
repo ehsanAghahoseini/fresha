@@ -1,4 +1,4 @@
-import { SalonsApi} from "@/api/salon-api";
+import { SalonsApi , UserSalonsApi} from "@/api/salon-api";
 import { useQuery } from "react-query"
 
 export const useAllSalons = () => {
@@ -6,6 +6,15 @@ export const useAllSalons = () => {
     refetchOnWindowFocus: false,
   })
 }
+
+
+export const useUserSalons = () => {
+  return useQuery("user-salons", UserSalonsApi, {
+    refetchOnWindowFocus: false,
+  })
+}
+
+
 
 
 // export const useLogin = (

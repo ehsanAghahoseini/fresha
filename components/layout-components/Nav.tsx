@@ -2,8 +2,10 @@ import { CSvgLogo, CSvgMore } from "@/icons"
 import { useEffect, useMemo, useState } from "react";
 import { ModalAuth } from "@/components";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Nav = () => {
+    const router = useRouter()
     const [visibleAuthModal, setVisibleAuthModal] = useState<boolean>(false)
 
     const AuthModal = useMemo(() => {
@@ -13,19 +15,38 @@ export const Nav = () => {
     }, [visibleAuthModal]);
 
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            var nav = document.getElementById('nav-cont')!;
-            if (window.pageYOffset > 20) {
-                nav.classList.add("bg-white");
-                nav.classList.add("shadow");
-                nav.classList.remove("bg-transparent");
-            } else {
-                nav.classList.remove("bg-white");
-                nav.classList.remove("shadow");
-                nav.classList.add("bg-transparent");
+        if (router.isReady && router.pathname == '/') {
+            window.addEventListener('scroll', () => {
+                var nav = document.getElementById('nav-cont')!;
+                if (window.pageYOffset > 20) {
+                    nav.classList.add("bg-white");
+                    nav.classList.add("shadow");
+                    nav.classList.remove("bg-transparent");
+                } else {
+                    nav.classList.remove("bg-white");
+                    nav.classList.remove("shadow");
+                    nav.classList.add("bg-transparent");
+                }
+
+            });
+        }
+    }, [router])
+
+
+    useEffect(() => {
+        if (router.isReady) {
+            let nav = document.getElementById('nav-cont');
+            if (router.pathname != '/') {
+                nav?.classList.add('shadow')
+                nav?.classList.add('bg-white')
             }
-        });
-    })
+            else {
+                nav?.classList.remove('shadow')
+                nav?.classList.remove('bg-white')
+            }
+        }
+
+    }, [router])
 
 
     return (
@@ -37,7 +58,9 @@ export const Nav = () => {
                     </Link>
                     <div className=" lg:flex hidden items-center ">
                         {['Home', 'Barbers', 'About us', 'Contact us'].map((item: any, index: number) =>
-                            <span className="w-[120px] cursor-pointer" key={index}>{item}</span>
+                            <Link key={index} className="w-[120px]" href={'/p'}>
+                                <span className="w-[120px] cursor-pointer" key={index}>{item}</span>
+                            </Link>
                         )}
                     </div>
                     <div className="lg:flex hidden items-center">
