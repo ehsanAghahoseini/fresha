@@ -6,8 +6,13 @@ export const SalonsApi = async () => {
 }
 
 
-
 export const UserSalonsApi = async () => {
     const data = await baseApi({ url: `${base_url}salon/user-salons`, method: "POST" , token:true })
+    return { data };
+}
+
+
+export const UserAddSalonsApi = async (postData:any) => {
+    const data = await baseApi({ url: `${base_url}salon/create`, method: "POST" , token:true , body:postData , formData:true })
     return { data };
 }

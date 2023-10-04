@@ -1,5 +1,6 @@
-import { SalonsApi , UserSalonsApi} from "@/api/salon-api";
-import { useQuery } from "react-query"
+import { SalonsApi , UserSalonsApi , UserAddSalonsApi} from "@/api/salon-api";
+import { useQuery , useMutation } from "react-query"
+import { toast } from "react-toastify";
 
 export const useAllSalons = () => {
   return useQuery("salons", SalonsApi, {
@@ -16,59 +17,26 @@ export const useUserSalons = () => {
 
 
 
-
-// export const useLogin = (
-//   formRef: any ,
-//   setVisibleModal:(bol:boolean)=>void ,
-// ) => {
-//   return useMutation({
-//     mutationFn: () => LoginApi(formRef.current['email'].value, formRef.current['password'].value),
-//     onSuccess: res => {
-//       if (res.data.status) {
-//         toast(res.data.message, { type: "success" })
-//         localStorage.setItem('user', JSON.stringify(res.data.user))
-//         localStorage.setItem('token', res.data.token)
-//         setVisibleModal(false)
-//       }
-//       else {
-//         toast(res.data.message, { type: "error" })
-//       }
-//     },
-//     onError: err => {
-//       console.log(err);
-//     }
-//   })
-// }
-
-
-
-// export const useRegister = (
-//   formRef: any,
-//   setVisibleModal:(bol:boolean)=>void ,
-// ) => {
-//   return useMutation({
-//     mutationFn: () => RegisterApi(
-//       formRef.current['name'].value,
-//       formRef.current['last_name'].value,
-//       formRef.current['email'].value,
-//       formRef.current['password'].value,
-//     ),
-//     onSuccess: res => {
-//       if (res.data.status) {
-//         toast(res.data.message, { type: "success" })
-//         localStorage.setItem('user', JSON.stringify(res.data.user))
-//         localStorage.setItem('token', res.data.token)
-//         setVisibleModal(false)
-//       }
-//       else {
-//         toast(res.data.message, { type: "error" })
-//       }
-//     },
-//     onError: err => {
-//       console.log(err);
-//     }
-//   })
-// }
-
+export const useUserAddSalon = (
+  setImageFile:(obj:any)=>void ,
+  setProfileTab:(str:string)=>void ,
+) => {
+  return useMutation({
+    mutationFn: (postData) => UserAddSalonsApi(postData),
+    onSuccess: res => {
+      if (res.data.status) {
+        setImageFile(null)
+        toast(res.data.message, { type: "success" })
+        setProfileTab('list')
+      }
+      else {
+        toast(res.data.message, { type: "error" })
+      }
+    },
+    onError: err => {
+      console.log(err);
+    }
+  })
+}
 
 
