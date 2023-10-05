@@ -1,8 +1,8 @@
 import { CSvgLocation, CSvgSearch , CSvgCalender , CSvgClock } from "@/icons"
 import dynamic from "next/dynamic";
-const CImage = dynamic(() => import("@/components").then((mod) => mod.CImage), { ssr: false });
+const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CImage), { ssr: false });
 
-export const Slider = () => {
+ const Slider = () => {
     return (
         <section className="w-full md:min-h-screen min-h-fit bg-slider bg-fresh-50  rounded-b-[30px] flex items-center justify-center md:pt-0 pt-[70px]">
             <div className="w-full max-w-[1400px]  flex flex-wrap justify-between items-center px-5 overflow-hidden">
@@ -55,3 +55,6 @@ export const Slider = () => {
         </section>
     )
 }
+
+
+export default Slider

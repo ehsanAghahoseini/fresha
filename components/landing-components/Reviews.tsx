@@ -1,9 +1,9 @@
 import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
 import dynamic from "next/dynamic";
-const CImage = dynamic(() => import("@/components").then((mod) => mod.CImage), { ssr: false });
+const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CImage), { ssr: false });
 
-export const Reviews = () => {
+ const Reviews = () => {
     const [sliderRef] = useKeenSlider({
         breakpoints: {
             "(min-width: 500px)": {
@@ -44,3 +44,6 @@ export const Reviews = () => {
         </section>
     )
 }
+
+
+export default Reviews

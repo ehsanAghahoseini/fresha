@@ -2,10 +2,10 @@ import { CSvgLocation, CSvgStar } from "@/icons"
 import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
 import dynamic from "next/dynamic";
-const CImage = dynamic(() => import("@/components").then((mod) => mod.CImage), { ssr: false });
+const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CImage), { ssr: false });
 
 
- export const BestBarber = () => {
+  const BestBarber = () => {
     const [sliderRef] = useKeenSlider({
         breakpoints: {
             "(min-width: 500px)": {
@@ -62,3 +62,5 @@ const CImage = dynamic(() => import("@/components").then((mod) => mod.CImage), {
         </section>
     )
 }
+
+export default BestBarber

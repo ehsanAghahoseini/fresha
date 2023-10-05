@@ -1,10 +1,11 @@
 import { useKeenSlider } from "keen-slider/react"
-import  SalonsCards  from "@/components/landing-components/SalonsCards";
+import SalonsCards from "@/components/landing-components/SalonsCards";
 import { useAllSalons } from "@/hooks/salon-hooks";
 import dynamic from "next/dynamic";
+import BestBarber from "./BestBarber";
 const SkeletonSalon = dynamic(() => import('@/components/widget/Skeleton/SkeletonSalon'))
 
-export const BestSalons = ({ title }: any) => {
+const BestSalons = ({ title }: any) => {
     const { data: salons, isLoading } = useAllSalons()
 
     const [sliderRef] = useKeenSlider({
@@ -31,7 +32,14 @@ export const BestSalons = ({ title }: any) => {
                 {!isLoading &&
                     <div ref={sliderRef} className="keen-slider py-5 md:mt-5 mt-0">
                         {salons?.data?.salons.map((item: any, index: number) =>
-                            <SalonsCards salon={item} key={index} index={index} className="keen-slider__slide" />
+                            <SalonsCards
+                                salon={item}
+                                key={index}
+                                index={index}
+                                className="keen-slider__slide"
+                            >
+                                <button className="w-[110px] h-[35px] text-sm bg-fresh-25 text-white rounded-full flex items-center justify-center">View Salons</button>
+                            </SalonsCards>
                         )}
                     </div>
                 }
@@ -42,3 +50,6 @@ export const BestSalons = ({ title }: any) => {
         </section>
     )
 }
+
+
+export default BestSalons

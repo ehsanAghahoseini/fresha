@@ -1,6 +1,6 @@
 import { useLogin } from "@/hooks/auth-hooks";
 import { useRef } from 'react'
-import { BtnLoader } from "@/components";
+import { BtnLoader } from "@/components/widget";
 
 
 export const LoginForm = ({setVisibleModal}:any) => {

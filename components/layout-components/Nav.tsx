@@ -1,10 +1,10 @@
 import { CSvgLogo, CSvgMore } from "@/icons"
 import { useEffect, useMemo, useState } from "react";
-import { ModalAuth } from "@/components";
+import ModalAuth  from "@/components/auth-components/ModalAuth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export const Nav = () => {
+ const Nav = () => {
     const router = useRouter()
     const [visibleAuthModal, setVisibleAuthModal] = useState<boolean>(false)
 
@@ -77,3 +77,6 @@ export const Nav = () => {
     )
 }
 
+
+
+export default Nav 

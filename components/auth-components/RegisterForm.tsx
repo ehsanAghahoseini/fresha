@@ -1,6 +1,6 @@
 import {  useRegister } from "@/hooks/auth-hooks";
 import { useRef } from "react";
-import { BtnLoader } from "@/components";
+import { BtnLoader } from "@/components/widget";
 import { FormAuthType } from "@/types/auth-types";
 
 export const RegisterForm = ({setVisibleModal}:FormAuthType) => {

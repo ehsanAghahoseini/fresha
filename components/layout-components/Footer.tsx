@@ -1,6 +1,6 @@
 import { CSvgArrow, CSvgInsta, CSvgLogo, CSvgTelegram, CSvgTikTok, CSvgWhatsApp } from "@/icons"
 
-export const Footer = () => {
+ const Footer = () => {
 
 
     return (
@@ -75,3 +75,5 @@ export const Footer = () => {
         </section>
     )
 }
+
+export default Footer

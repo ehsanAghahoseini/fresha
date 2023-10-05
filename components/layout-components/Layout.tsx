@@ -1,7 +1,10 @@
-import { Footer } from "."
-import { Nav } from "./Nav"
+import dynamic from "next/dynamic";
 
-export const Layout=({ children }: any)=>{
+const Footer = dynamic(() => import("@/components/layout-components/Footer"));
+const Nav = dynamic(() => import("@/components/layout-components/Nav"));
+
+
+ const Layout=({ children }: any)=>{
     return(
         <div className="w-full flex flex-col">
             <Nav/>
@@ -10,3 +13,5 @@ export const Layout=({ children }: any)=>{
         </div>
     )
 }
+
+export default Layout

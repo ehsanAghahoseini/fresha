@@ -1,13 +1,14 @@
 import dynamic from "next/dynamic";
-const CImage = dynamic(() => import("@/components").then((mod) => mod.CImage), { ssr: false });
+const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CImage), { ssr: false });
 
 declare type SalonCardProps = {
     className?: string,
     index: number,
     salon: any,
+    children: React.ReactNode
 }
 
-const SalonsCards = ({ index, className, salon }: SalonCardProps) => {
+const SalonsCards = ({ index, className, salon, children }: SalonCardProps) => {
 
     return (
         <div key={index} className={` ${className} shadow-salons flex flex-col shadow rounded-lg overflow-hidden relative `}>
@@ -26,7 +27,9 @@ const SalonsCards = ({ index, className, salon }: SalonCardProps) => {
                     </div>
                 </div>
                 <span className="text-sm text-gray-400 my-3">Lorem ipsum dolor sit amet consectetur adipisicing sed.</span>
-                <button className="w-[110px] h-[35px] text-sm bg-fresh-25 text-white rounded-full my-3 flex items-center justify-center">View Salons</button>
+                <div className="w-full  my-3">
+                    {children}
+                </div>
             </div>
         </div>
 

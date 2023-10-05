@@ -1,7 +1,6 @@
 import { CSvgMoreDot } from "@/icons";
-import { useState } from 'react'
 import dynamic from "next/dynamic";
-const CImage = dynamic(() => import("@/components").then((mod) => mod.CImage), { ssr: false });
+const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CImage), { ssr: false });
 
 
 const SideBar = () => {

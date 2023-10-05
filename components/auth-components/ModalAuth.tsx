@@ -1,13 +1,14 @@
 import { useState } from "react";
-import CModal from "../widget/CModal";
 import { CSvgLogo } from "@/icons";
 import { ModalAuthType } from "@/types/auth-types";
 import dynamic from 'next/dynamic'
-const CImage = dynamic(() => import("@/components").then((mod) => mod.CImage), { ssr: false });
+
+const CModal = dynamic(() => import("@/components/widget/CModal"), { ssr: false });
+const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CImage), { ssr: false });
 const LoginForm = dynamic(() => import('./LoginForm'), { ssr: false })
 const RegisterForm = dynamic(() => import('./RegisterForm'), { ssr: false })
 
-export const ModalAuth = ({ visible, setVisible }: ModalAuthType) => {
+ const ModalAuth = ({ visible, setVisible }: ModalAuthType) => {
     const [authType, setAuthType] = useState<string>('login')
 
     const handelChangeAuth = (type: string) => {
@@ -49,3 +50,6 @@ export const ModalAuth = ({ visible, setVisible }: ModalAuthType) => {
         </>
     )
 }
+
+
+export default ModalAuth

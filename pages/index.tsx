@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
 
-const Slider = dynamic(() => import("@/components").then((mod) => mod.Slider), { ssr: false });
-const DownloadApp = dynamic(() => import("@/components").then((mod) => mod.DownloadApp), { ssr: false });
-const Reviews = dynamic(() => import("@/components").then((mod) => mod.Reviews), { ssr: false });
-const BestBarber = dynamic(() => import("@/components").then((mod) => mod.BestBarber), { ssr: false });
-const BestSalons = dynamic(() => import("@/components").then((mod) => mod.BestSalons), { ssr: false });
+const Slider = dynamic(() => import("@/components/landing-components/Slider"), { ssr: false });
+const DownloadApp = dynamic(() => import("@/components/landing-components/DownloadApp"), { ssr: false });
+const Reviews = dynamic(() => import("@/components/landing-components/Reviews"), { ssr: false });
+const BestBarber = dynamic(() => import("@/components/landing-components/BestBarber"), { ssr: false });
+const BestSalons = dynamic(() => import("@/components/landing-components/BestSalons"));
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 
-export const methodHandelAddBots = (
+export const methodHandelAddSalons = (
     formRef: any,
     imageFile: any,
     mutate:(obj:any)=>void ,
