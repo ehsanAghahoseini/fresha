@@ -44,9 +44,9 @@ const PostSection = () => {
                 <button onClick={() =>  handelStartEdit(item) } className="w-[35px] h-[35px] border border-fresh-25 rounded mr-1 flex items-center justify-center">
                   <CSvgEdit className="fill-fresh-25 w-[20px]" />
                 </button>
-                <button className="w-[35px] h-[35px] border border-fresh-25 rounded mr-1 flex items-center justify-center">
+                {/* <button className="w-[35px] h-[35px] border border-fresh-25 rounded mr-1 flex items-center justify-center">
                   <CSvgTrash className="stroke-fresh-25 w-[25px]" />
-                </button>
+                </button> */}
               </div>
             </SalonsCards>
           </div>
