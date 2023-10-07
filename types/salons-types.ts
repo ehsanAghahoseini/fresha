@@ -22,3 +22,10 @@ export interface ModalEditSalonType {
     setVisible:(bol:boolean)=>void ,
     fileSelected:any ,
 }
+
+
+export interface ModalViewSalonType {
+    visible:boolean ,
+    setVisible:(bol:boolean)=>void ,
+    salonId:any
+}

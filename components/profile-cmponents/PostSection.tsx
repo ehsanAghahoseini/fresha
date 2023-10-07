@@ -1,6 +1,7 @@
+import { ContextContainer } from "@/context/ContextContainer";
 import { useUserSalons } from "@/hooks/salon-hooks";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 const SalonsCards = dynamic(() => import("@/components/landing-components/SalonsCards"), { ssr: false });
 const SkeletonProfileSalon = dynamic(() => import("@/components/widget/Skeleton/SkeletonProfileSalon"), { ssr: false });
@@ -11,9 +12,15 @@ const ModalEditSalon = dynamic(() => import("@/components/profile-cmponents/Moda
 
 
 const PostSection = () => {
+  const Ctx = useContext(ContextContainer)
   const { data: salons, isLoading } = useUserSalons()
   const [fileSelected, setFileSelected] = useState<any>(null)
   const [visibleEdit, setVisibleEdit] = useState<boolean>(false)
+
+  const handelStartViewDetail=(item:any)=>{
+    Ctx.setVisibleDetail(true)
+    Ctx.setSalonId(item.id)
+  }
 
   const handelStartEdit=(item:any)=>{
     setFileSelected(item)
@@ -31,7 +38,7 @@ const PostSection = () => {
               salon={item}
             >
               <div className="flex items-center">
-                <button className="w-[35px] h-[35px] border border-fresh-25 rounded mr-1 flex items-center justify-center">
+                <button  onClick={()=>handelStartViewDetail(item)} className="w-[35px] h-[35px] border border-fresh-25 rounded mr-1 flex items-center justify-center">
                   <CSvgEye className="stroke-fresh-25 w-[25px]" />
                 </button>
                 <button onClick={() =>  handelStartEdit(item) } className="w-[35px] h-[35px] border border-fresh-25 rounded mr-1 flex items-center justify-center">

@@ -1,10 +1,12 @@
 import { CSvgLogo, CSvgMore } from "@/icons"
-import { useEffect, useMemo, useState } from "react";
-import ModalAuth  from "@/components/auth-components/ModalAuth";
+import { useContext, useEffect, useMemo, useState } from "react";
+import ModalAuth from "@/components/auth-components/ModalAuth";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { ContextContainer } from "@/context/ContextContainer";
 
- const Nav = () => {
+const Nav = () => {
+    const Ctx = useContext(ContextContainer)
     const router = useRouter()
     const [visibleAuthModal, setVisibleAuthModal] = useState<boolean>(false)
 
@@ -58,15 +60,23 @@ import { useRouter } from "next/router";
                     </Link>
                     <div className=" lg:flex hidden items-center ">
                         {['Home', 'Barbers', 'About us', 'Contact us'].map((item: any, index: number) =>
-                            <Link key={index} className="w-[120px]" href={'/p'}>
+                            <Link key={index} className="w-[120px]" href={'/'}>
                                 <span className="w-[120px] cursor-pointer" key={index}>{item}</span>
                             </Link>
                         )}
                     </div>
-                    <div className="lg:flex hidden items-center">
-                        <button aria-label="menu" onClick={() => { setVisibleAuthModal(true) }} className="w-[120px] h-[40px] rounded-lg border border-fresh-25 text-fresh-25 flex items-center justify-center bg-transparent hover:bg-fresh-25 hover:text-white transition-all">For business</button>
-                        <button aria-label="menu" onClick={() => { setVisibleAuthModal(true) }} className="w-[120px] h-[40px] rounded-lg border border-fresh-25 bg-fresh-25 text-white flex items-center justify-center ml-2">Register</button>
-                    </div>
+                    {Ctx.isAuth ?
+                        <div className="lg:flex hidden items-center">
+                            <Link href={'/p'}>
+                                <button aria-label="menu" className="w-[120px] h-[40px] rounded-lg border border-fresh-25 text-fresh-25 flex items-center justify-center bg-transparent hover:bg-fresh-25 hover:text-white transition-all">Profile</button>
+                            </Link>
+                        </div>
+                        :
+                        <div className="lg:flex hidden items-center">
+                            <button aria-label="menu" onClick={() => { setVisibleAuthModal(true) }} className="w-[120px] h-[40px] rounded-lg border border-fresh-25 text-fresh-25 flex items-center justify-center bg-transparent hover:bg-fresh-25 hover:text-white transition-all">For business</button>
+                            <button aria-label="menu" onClick={() => { setVisibleAuthModal(true) }} className="w-[120px] h-[40px] rounded-lg border border-fresh-25 bg-fresh-25 text-white flex items-center justify-center ml-2">Register</button>
+                        </div>
+                    }
                     <button aria-label="menu" onClick={() => { setVisibleAuthModal(true) }} className="w-[30px] h-[30px] border border-fresh-25 rounded-lg lg:hidden flex items-center justify-center">
                         <CSvgMore className="stroke-fresh-25 w-[23px]" />
                     </button>

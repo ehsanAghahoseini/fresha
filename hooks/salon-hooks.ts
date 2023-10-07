@@ -1,5 +1,5 @@
-import { SalonsApi , UserSalonsApi , UserAddSalonsApi} from "@/api/salon-api";
-import { useQuery , useMutation } from "react-query"
+import { SalonsApi , UserSalonsApi , UserAddSalonsApi , UserEditSalonsApi , SalonsSingleApi} from "@/api/salon-api";
+import { useQuery , useMutation , useQueryClient } from "react-query"
 import { toast } from "react-toastify";
 
 export const useAllSalons = () => {
@@ -14,6 +14,18 @@ export const useUserSalons = () => {
     refetchOnWindowFocus: false,
   })
 }
+
+
+
+export const useSingleSalons = (
+  salon_id:any,
+) => {
+  return useQuery(["salons" , salon_id], ()=>SalonsSingleApi(salon_id), {
+    refetchOnWindowFocus: false,
+    enabled:false
+  })
+}
+
 
 
 
@@ -38,5 +50,32 @@ export const useUserAddSalon = (
     }
   })
 }
+
+
+export const useUserEditSalon = (
+  setImageFile:(obj:any)=>void ,
+  setVisible:(bol:boolean)=>void,
+  id:number 
+) => {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (postData) => UserEditSalonsApi(postData , id),
+    onSuccess: res => {
+      if (res.data.status) {
+        setImageFile(null)
+        queryClient.refetchQueries('user-salons')
+        setVisible(false)
+        toast(res.data.message, { type: "success" })
+      }
+      else {
+        toast(res.data.message, { type: "error" })
+      }
+    },
+    onError: err => {
+      console.log(err);
+    }
+  })
+}
+
 
 

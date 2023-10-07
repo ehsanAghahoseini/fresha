@@ -2,11 +2,14 @@ import { useKeenSlider } from "keen-slider/react"
 import SalonsCards from "@/components/landing-components/SalonsCards";
 import { useAllSalons } from "@/hooks/salon-hooks";
 import dynamic from "next/dynamic";
-import BestBarber from "./BestBarber";
+import { useContext } from "react";
+import { ContextContainer } from "@/context/ContextContainer";
 const SkeletonSalon = dynamic(() => import('@/components/widget/Skeleton/SkeletonSalon'))
 
 const BestSalons = ({ title }: any) => {
     const { data: salons, isLoading } = useAllSalons()
+    const Ctx = useContext(ContextContainer)
+
 
     const [sliderRef] = useKeenSlider({
         breakpoints: {
@@ -24,6 +27,12 @@ const BestSalons = ({ title }: any) => {
     })
 
 
+    const handelViweDetail=(salon:any)=>{
+        Ctx.setSalonId(salon.id)
+        Ctx.setVisibleDetail(true)
+    }
+
+
     return (
         <section className="w-full md:my-5 my-2 flex items-center justify-center md:py-5 py-3">
             <div className="w-full max-w-[1400px]  flex flex-col items-center px-3">
@@ -38,7 +47,7 @@ const BestSalons = ({ title }: any) => {
                                 index={index}
                                 className="keen-slider__slide"
                             >
-                                <button className="w-[110px] h-[35px] text-sm bg-fresh-25 text-white rounded-full flex items-center justify-center">View Salons</button>
+                                <button onClick={()=>handelViweDetail(item)} className="w-[110px] h-[35px] text-sm bg-fresh-25 text-white rounded-full flex items-center justify-center">View Salons</button>
                             </SalonsCards>
                         )}
                     </div>

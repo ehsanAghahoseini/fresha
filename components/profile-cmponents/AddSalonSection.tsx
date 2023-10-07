@@ -1,6 +1,6 @@
 import { useUserAddSalon } from "@/hooks/salon-hooks";
 import { useState, useRef, useContext } from 'react'
-import { methodHandelAddSalons } from '@/utils/salons-utils'
+import { methodHandelSubmitSalons } from '@/utils/salons-utils'
 import { ContextContainer } from "@/context/ContextContainer";
 import dynamic from "next/dynamic";
 const SalonForm = dynamic(() => import("@/components/profile-cmponents/SalonForm"));
@@ -15,7 +15,7 @@ const AddSalonSection = () => {
 
     const onSubmitForm = (e: any) => {
         e.preventDefault();
-        methodHandelAddSalons(formRef, imageFile, mutate)
+        methodHandelSubmitSalons(formRef, imageFile, mutate)
     }
 
     return (

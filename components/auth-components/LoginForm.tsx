@@ -1,11 +1,13 @@
 import { useLogin } from "@/hooks/auth-hooks";
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import { BtnLoader } from "@/components/widget";
+import { ContextContainer } from "@/context/ContextContainer";
 
 
 export const LoginForm = ({setVisibleModal}:any) => {
     const formRef: any = useRef()
-    const { isLoading, mutate } = useLogin(formRef , setVisibleModal)
+    const Ctx = useContext(ContextContainer)
+    const { isLoading, mutate } = useLogin(formRef , setVisibleModal , Ctx.setIsAuth)
 
 
     const handelLogin = (e: any) => {

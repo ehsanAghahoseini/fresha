@@ -1,11 +1,13 @@
 import {  useRegister } from "@/hooks/auth-hooks";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { BtnLoader } from "@/components/widget";
 import { FormAuthType } from "@/types/auth-types";
+import { ContextContainer } from "@/context/ContextContainer";
 
 export const RegisterForm = ({setVisibleModal}:FormAuthType) => {
     const formRef: any = useRef()
-    const { isLoading, mutate } = useRegister(formRef , setVisibleModal)
+    const Ctx = useContext(ContextContainer)
+    const { isLoading, mutate } = useRegister(formRef , setVisibleModal , Ctx.setIsAuth)
 
 
     const handelRegister = (e: any) => {
