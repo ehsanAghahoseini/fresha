@@ -18,6 +18,7 @@ export const methodHandelSubmitSalons = (
     formData.append("locale", 'en');
     formData.append("type", 'salons');
     formData.append("status", '1');
+    formData.append("image", typeof imageFile === 'object' ? imageFile : null);
     formData.append("svg", '');
     mutate(formData)
 }

@@ -23,11 +23,6 @@ const ModalViewSalon = ({ visible, setVisible, salonId }: ModalViewSalonType) =>
         }
     }, [salonId])
 
-    useEffect(()=>{
-        console.log(salon?.data?.salon);
-        
-    },[salon])
-
     return (
         <>
             <CModal visible={visible} setVisible={setVisible} uId="view-salon"  >
