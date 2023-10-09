@@ -7,6 +7,7 @@ const SalonForm = ({ formRef, onSubmit, isLoading , children , defualtData }: Fo
     useEffect(()=>{
         if(defualtData && defualtData!= null){
             formRef.current['name'].value = defualtData.name;
+            formRef.current['short_description'].value = defualtData.short_description;
             formRef.current['description'].value = defualtData.description;
         }
     },[defualtData])
