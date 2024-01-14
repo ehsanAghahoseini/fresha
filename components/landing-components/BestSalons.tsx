@@ -35,7 +35,7 @@ const BestSalons = ({ title }: any) => {
 
     return (
         <section className="w-full md:my-5 my-2 flex items-center justify-center md:py-5 py-3">
-            <div className="w-full max-w-[1400px]  flex flex-col items-center px-3">
+            <div className="w-full max-w-[1200px]  flex flex-col items-center px-3">
                 <span className="text-fresh-25 mb-3">Meet Our Professionals</span>
                 <span className="mx-auto md:text-[30px] text-[20px] ">{title}</span>
                 {!isLoading &&

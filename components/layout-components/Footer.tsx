@@ -20,7 +20,7 @@ import { CSvgArrow, CSvgInsta, CSvgLogo, CSvgTelegram, CSvgTikTok, CSvgWhatsApp 
                     </form>
                 </div>
             </div>
-            <div className="w-full max-w-[1300px]  mt-10 flex flex-wrap items-center mb-5">
+            <div className="w-full max-w-[1200px]  mt-10 flex flex-wrap items-center mb-5">
                 <div className="md:w-6/12 w-full lg:w-3/12   flex flex-col p-2 mt-3">
                     <CSvgLogo className="w-[80px] " />
                     <span className="text-sm mt-2 leading-6 text-gray-600 text-justify">

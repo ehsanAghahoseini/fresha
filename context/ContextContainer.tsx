@@ -8,6 +8,7 @@ export const ContextContainer = React.createContext<any>({})
     const [visibleDetail , setVisibleDetail] = useState<boolean>(false)
     const [salonId , setSalonId] = useState<number>(0)
     const [isAuth , setIsAuth] = useState<boolean>(false)
+    const [visibleMobileNav , setVisibleMobileNav] = useState<boolean>(false)
 
 
     return (
@@ -19,7 +20,9 @@ export const ContextContainer = React.createContext<any>({})
             salonId ,
             setSalonId ,
             isAuth , 
-            setIsAuth
+            setIsAuth ,
+            visibleMobileNav ,
+            setVisibleMobileNav
         }}>
             {props.children}
         </ContextContainer.Provider>

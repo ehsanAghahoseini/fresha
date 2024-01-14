@@ -7,7 +7,7 @@ const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CIm
 
     return (
         <section className="w-full  my-5 md:mt-20 mt-10 flex items-center justify-center pt-5">
-            <div className="w-full max-w-[1400px]  flex flex-wrap items-center md:px-5 px-3">
+            <div className="w-full max-w-[1200px]  flex flex-wrap items-center md:px-5 px-3">
                 <div className="lg:w-[50%] w-full flex flex-col lg:order-1 order-2 lg:mt-0 mt-10">
                     <h4 className="lg:text-[40px] md:text-[30px] text-[20px]">Better Barbers , Better Salons , Everywhere</h4>
                     <span className="text-gray-500">

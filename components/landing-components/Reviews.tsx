@@ -19,7 +19,7 @@ const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CIm
 
     return (
         <section className="w-full   my-5 md:mt-20 mt-10 flex items-center justify-center pt-5">
-            <div className="w-full max-w-[1400px]  flex flex-col items-center px-3">
+            <div className="w-full max-w-[1200px]  flex flex-col items-center px-3">
                 <span className="mx-auto md:text-[30px] text-[20px]">Reviews</span>
                 <div ref={sliderRef} className="keen-slider reviews-section py-10  ">
                     {new Array(10).fill("").map((item: any, index: number) =>

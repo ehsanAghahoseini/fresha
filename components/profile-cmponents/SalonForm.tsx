@@ -16,15 +16,15 @@ const SalonForm = ({ formRef, onSubmit, isLoading , children , defualtData }: Fo
         <form ref={formRef} onSubmit={onSubmit} className="w-full flex flex-col p-4 text-sm">
             <div className="w-full flex flex-col">
                 <span className="text-gray-500">Salon Name</span>
-                <input name='name' type="text" placeholder="Enter salon name" className="w-full h-[40px] mt-2 rounded-md border shadow px-2 focus:outline-none " />
+                <input name='name' type="text" placeholder="Enter salon name" className="w-full h-[40px] mt-2 rounded-md border shadow px-2 focus:outline-none " required/>
             </div>
             <div className="w-full flex flex-col mt-5">
                 <span className="text-gray-500">Short Description</span>
-                <input name='short_description' type="text" placeholder="Enter mini description" className="w-full h-[40px] mt-2 rounded-md border shadow px-2 focus:outline-none " />
+                <input name='short_description' type="text" placeholder="Enter mini description" className="w-full h-[40px] mt-2 rounded-md border shadow px-2 focus:outline-none " required/>
             </div>
             <div className="w-full flex flex-col mt-5">
                 <span className="text-gray-500">Description</span>
-                <textarea name='description' placeholder="Enter description" className="w-full h-[70px] mt-2 rounded-md border shadow p-2 focus:outline-none " />
+                <textarea name='description' placeholder="Enter description" className="w-full h-[70px] mt-2 rounded-md border shadow p-2 focus:outline-none " required/>
             </div>
             
             {children}

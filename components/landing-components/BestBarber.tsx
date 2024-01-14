@@ -21,7 +21,7 @@ const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CIm
 
     return (
         <section className="w-full   my-5 flex items-center justify-center pt-5">
-            <div className="w-full max-w-[1400px]  flex flex-col items-center px-3">
+            <div className="w-full max-w-[1200px]  flex flex-col items-center px-3">
                 <span className="text-fresh-25 mb-3">Meet Our Professionals</span>
                 <span className="mx-auto md:text-[30px] text-[20px]">Top Rated Barbers</span>
                 <div ref={sliderRef} className="keen-slider py-10  md:mt-5 mt-0">

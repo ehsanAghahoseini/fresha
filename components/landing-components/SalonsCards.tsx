@@ -19,14 +19,14 @@ const SalonsCards = ({ index, className, salon, children }: SalonCardProps) => {
             <div className=" w-full flex flex-col px-5 py-2 relative">
                 <h3 className="md:text-xl text-lg font-bold text-[#061a3a]">{salon.name}</h3>
                 <div className="w-full flex items-center mt-4">
-                    <CImage src="/barber/2.jpg" className="w-[45px] h-[45px] rounded-full" alt='barber' />
+                    {/* <CImage src="/barber/2.jpg" className="w-[45px] h-[45px] rounded-full" alt='barber' /> */}
 
                     <span className="ml-2 font-bold text-sm text-gray-600">Eva Green</span>
                     <div className="ml-2 pl-2 border-l text-sm text-gray-400">
-                        April 10, 2023
+                        {salon.created_at?.slice(0,10)}
                     </div>
                 </div>
-                <span className="text-sm text-gray-400 my-3">Lorem ipsum dolor sit amet consectetur adipisicing sed.</span>
+                <span className="text-sm text-gray-400 my-3">{salon.short_description}</span>
                 <div className="w-full  my-3">
                     {children}
                 </div>
