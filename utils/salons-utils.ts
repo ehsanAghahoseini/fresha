@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 export const methodHandelSubmitSalons = (
     formRef: any,
     imageFile: any,
+    position:any ,
     mutate: (obj: any) => void,
 ) => {
     let formData = new FormData()
@@ -19,6 +20,8 @@ export const methodHandelSubmitSalons = (
     formData.append("type", 'salons');
     formData.append("status", '1');
     formData.append("image", typeof imageFile === 'object' ? imageFile : null);
+    formData.append("latitude", position[0]);
+    formData.append("longitude", position[1]);
     formData.append("svg", '');
     mutate(formData)
 }

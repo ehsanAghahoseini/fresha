@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "keen-slider/keen-slider.min.css"
 import { QueryClientProvider, QueryClient } from 'react-query';
 import ContextContainerModels from '@/context/ContextContainer';
+import 'leaflet/dist/leaflet.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();

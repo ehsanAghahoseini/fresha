@@ -6,22 +6,27 @@ import UploadCover from "./UploadCover";
 import { methodHandelSubmitSalons } from "@/utils/salons-utils";
 const CModal = dynamic(() => import("@/components/widget/CModal"), { ssr: false });
 const SalonForm = dynamic(() => import("@/components/profile-cmponents/SalonForm"), { ssr: false });
-
+const ProfileMap: any = dynamic(() => import('@/components/profile-cmponents/ProfileMap'), {
+    ssr: false
+})
 
 const ModalEditSalon = ({ visible, setVisible, fileSelected }: ModalEditSalonType) => {
     const formRef: any = useRef()
     const [imageFile, setImageFile] = useState<any>(null)
-    const { isLoading, mutate } = useUserEditSalon(setImageFile ,setVisible , fileSelected?.id)
-
+    const [position, setPosition] = useState<any>([25.22980044107411, 55.31893997831666])
+    const { isLoading, mutate } = useUserEditSalon(setImageFile, setVisible, fileSelected?.id)
 
     const onSubmitForm = (e: any) => {
         e.preventDefault();
-        methodHandelSubmitSalons(formRef, imageFile, mutate)
+        methodHandelSubmitSalons(formRef, imageFile,position , mutate)
     }
 
     useEffect(() => {
-        if(fileSelected){
+        if (fileSelected) {
             setImageFile(fileSelected?.image_url)
+            if(fileSelected?.latitude != null){                
+                setPosition([parseFloat(fileSelected?.latitude) , parseFloat(fileSelected?.longitude)])
+            }
         }
     }, [fileSelected])
 
@@ -31,6 +36,7 @@ const ModalEditSalon = ({ visible, setVisible, fileSelected }: ModalEditSalonTyp
                 <>
                     <SalonForm formRef={formRef} isLoading={isLoading} onSubmit={onSubmitForm} defualtData={fileSelected}  >
                         <>
+                            <ProfileMap position={position} setPosition={setPosition} />
                             <UploadCover imageFile={imageFile} setImageFile={setImageFile} />
                         </>
                     </SalonForm>

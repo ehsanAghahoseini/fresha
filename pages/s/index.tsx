@@ -7,6 +7,7 @@ const SearchMap: any = dynamic(() => import('@/components/search-components/Sear
   ssr: false
 })
 
+
 export default function Home() {
   const { data: salons, isLoading } = useAllSalons()
   const Ctx = useContext(ContextContainer)
@@ -29,17 +30,11 @@ export default function Home() {
           )}
         </div>
         <div className="w-[50%] h-screen sticky top-[80px] md:flex hidden  p-2">
-          <div className="w-full h-full rounded-md overflow-hidden">
-            <SearchMap listPlace={[]} />
+          <div className="w-full h-full flex rounded-md overflow-hidden relative">
+            <SearchMap listPlace = {salons?.data?.salons}  />
           </div>
         </div>
       </div>
     </section>
   )
-}
-
-
-let salo = {
-  'name': 'Salon 1',
-  'image_url': '/salons/1.avif'
 }
