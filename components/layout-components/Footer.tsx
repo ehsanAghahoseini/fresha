@@ -24,7 +24,7 @@ import { CSvgArrow, CSvgInsta, CSvgLogo, CSvgTelegram, CSvgTikTok, CSvgWhatsApp 
                 <div className="md:w-6/12 w-full lg:w-3/12   flex flex-col p-2 mt-3">
                     <CSvgLogo className="w-[80px] " />
                     <span className="text-sm mt-2 leading-6 text-gray-600 text-justify">
-                        Powerfully flexible html template for medical & health related organizations, institutes, clinics and businesses.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
                     </span>
                     <div className="flex items-center mt-3">
                         <div className="w-[35px] h-[35px] rounded-full mr-2 flex items-center justify-center bg-fresh-25">
