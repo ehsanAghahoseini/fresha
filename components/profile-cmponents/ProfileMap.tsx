@@ -3,7 +3,6 @@ import { MapContainer, Marker, Popup, TileLayer, Pane, Circle, LayerGroup } from
 import L from 'leaflet';
 // import { GeoSearchControl, OpenStreetMapProvider, SearchControl } from 'leaflet-geosearch';
 import { useMapEvents } from "react-leaflet";
-import { toast } from "react-toastify";
 
 
 interface IMapProps {
@@ -12,8 +11,7 @@ interface IMapProps {
 }
 
 
-export default function ProfileMap({ position, setPosition }: IMapProps) {
-    const [localPos, setLocalPos] = useState(null)
+export default function ProfileMap({ position, setPosition  }: IMapProps) {
 
     let DefaultIcon = L.icon({
         iconUrl: '/icon/pin2.png',
@@ -21,20 +19,14 @@ export default function ProfileMap({ position, setPosition }: IMapProps) {
     });
     L.Marker.prototype.options.icon = DefaultIcon;
 
-    useEffect(() => {
-        if (position?.[0]) {             
-            setLocalPos(position)
-        }
-    }, [position])
-
     return (
         <div className="w-full flex flex-col mt-5">
             <span className="text-gray-500 mb-2">Location</span>
             <div className="w-full h-[200px] rounded-md overflow-hidden">
-                {localPos != null &&
+                {position != null && 
                     <MapContainer
                         id="map"
-                        center={localPos}
+                        center={position}
                         zoom={13}
                         doubleClickZoom={false}
                         closePopupOnClick={false}
@@ -46,7 +38,7 @@ export default function ProfileMap({ position, setPosition }: IMapProps) {
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
-                        <Marker position={localPos} />
+                        <Marker position={position} />
                         <DrogMap setPosition={setPosition} />
                     </MapContainer>
                 }

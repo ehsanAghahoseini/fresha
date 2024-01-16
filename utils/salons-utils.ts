@@ -3,12 +3,15 @@ import { toast } from "react-toastify";
 export const methodHandelSubmitSalons = (
     formRef: any,
     imageFile: any,
-    position:any ,
+    position: any,
     mutate: (obj: any) => void,
 ) => {
     let formData = new FormData()
+    if (position == null) {
+        return toast("Location cannot be null", { type: "success" })
+    }
     if (imageFile == null) {
-        toast("Cover cannot be null", { type: "success" })
+        return toast("Cover cannot be null", { type: "success" })
     }
     else if (typeof imageFile === 'object') {
         formData.append("image", imageFile);

@@ -13,7 +13,7 @@ const ProfileMap: any = dynamic(() => import('@/components/profile-cmponents/Pro
 const ModalEditSalon = ({ visible, setVisible, fileSelected }: ModalEditSalonType) => {
     const formRef: any = useRef()
     const [imageFile, setImageFile] = useState<any>(null)
-    const [position, setPosition] = useState<any>([25.22980044107411, 55.31893997831666])
+    const [position, setPosition] = useState<any>(null)
     const { isLoading, mutate } = useUserEditSalon(setImageFile, setVisible, fileSelected?.id)
 
     const onSubmitForm = (e: any) => {
@@ -32,7 +32,7 @@ const ModalEditSalon = ({ visible, setVisible, fileSelected }: ModalEditSalonTyp
 
     return (
         <>
-            <CModal visible={visible} setVisible={setVisible} uId="edit-salon" >
+            <CModal onScap={()=>{setPosition(null)}} visible={visible} setVisible={setVisible} uId="edit-salon" >
                 <>
                     <SalonForm formRef={formRef} isLoading={isLoading} onSubmit={onSubmitForm} defualtData={fileSelected}  >
                         <>
