@@ -8,10 +8,11 @@ const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CIm
 
 interface IProps {
     listPlace: any,
+    handelViweDetail: (obj: any) => void
 }
 
 
-export default function SearchMap({ listPlace }: IProps) {
+export default function SearchMap({ listPlace, handelViweDetail }: IProps) {
     const [firstItem, setFirstItem] = useState<any>(null)
 
     let DefaultIcon = L.icon({
@@ -32,8 +33,8 @@ export default function SearchMap({ listPlace }: IProps) {
             {firstItem != null &&
                 <MapContainer
                     id="map"
-                    center={[51.505, -0.09]}
-                    zoom={12}
+                    center={[25.288318084295074, 55.31393051147462]}
+                    zoom={11}
                     doubleClickZoom={false}
                     closePopupOnClick={false}
                     trackResize={false}
@@ -45,18 +46,22 @@ export default function SearchMap({ listPlace }: IProps) {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     {listPlace && Array.isArray(listPlace) && listPlace?.map((item: any, index: number) =>
-                        <Marker key={index} position={[51.505, -0.09]}>
-                            <Popup>
-                                <div className='w-[100px]  cursor-pointer bg-white rounded-md flex flex-col items-center '>
-                                    <div className="w-full pt-[70%] relative overflow-hidden rounded-md">
-                                        <CImage src={item?.image_url} className="w-full h-full absolute top-0 object-cover object-center" alt='bg' />
-                                    </div>
-                                    <div className='flex flex-col justify-end items-start text-[#252525]'>
-                                        <span className=' font-bold mt-2'>{item.name}</span>
-                                    </div>
-                                </div>
-                            </Popup>
-                        </Marker>
+                        <>
+                            {item?.latitude != null &&
+                                <Marker key={index} position={[item?.latitude, item?.longitude]}>
+                                    <Popup>
+                                        <div onClick={() => handelViweDetail(item)} className='w-[100px]  cursor-pointer bg-white rounded-md flex flex-col items-center '>
+                                            <div className="w-full pt-[70%] relative overflow-hidden rounded-md">
+                                                <CImage src={item?.image_url} className="w-full h-full absolute top-0 object-cover object-center" alt='bg' />
+                                            </div>
+                                            <div className='flex flex-col justify-end items-start text-center text-[#252525]'>
+                                                <span className=' font-bold mt-2'>{item.name}</span>
+                                            </div>
+                                        </div>
+                                    </Popup>
+                                </Marker>
+                            }
+                        </>
                     )}
                 </MapContainer>
             }

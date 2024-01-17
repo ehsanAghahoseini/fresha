@@ -6,6 +6,11 @@ export const SalonsApi = async () => {
 }
 
 
+export const SearchSalonsApi = async (name:string) => {
+    const data = await baseApi({ url: name ? `${base_url}salon/search?name=${name}` : `${base_url}salon/salons`, method: "GET" })
+    return { data };
+}
+
 export const SalonsSingleApi = async (id:number) => {
     const data = await baseApi({ url: `${base_url}salon/${id}`, method: "GET" })
     return { data };

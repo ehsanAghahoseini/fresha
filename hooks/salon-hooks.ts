@@ -1,10 +1,20 @@
-import { SalonsApi , UserSalonsApi , UserAddSalonsApi , UserEditSalonsApi , SalonsSingleApi} from "@/api/salon-api";
+import { SalonsApi , UserSalonsApi , UserAddSalonsApi , UserEditSalonsApi , SalonsSingleApi, SearchSalonsApi} from "@/api/salon-api";
 import { useQuery , useMutation , useQueryClient } from "react-query"
 import { toast } from "react-toastify";
 
 export const useAllSalons = () => {
   return useQuery("salons", SalonsApi, {
     refetchOnWindowFocus: false,
+  })
+}
+
+
+export const useSearchSalons = (
+  name:any ,
+) => {  
+  return useQuery("search-salons", ()=>SearchSalonsApi(name), {
+    refetchOnWindowFocus: false,
+    enabled:false
   })
 }
 
