@@ -7,7 +7,7 @@ export const SalonsApi = async () => {
 
 
 export const SearchSalonsApi = async (name:string) => {
-    const data = await baseApi({ url: name ? `${base_url}salon/search?name=${name}` : `${base_url}salon/salons`, method: "GET" })
+    const data = await baseApi({ url: name ? `${base_url}salons/search?name=${name}` : `${base_url}salon/salons`, method: "GET" })
     return { data };
 }
 

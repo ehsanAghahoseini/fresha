@@ -7,9 +7,6 @@ export const methodHandelSubmitSalons = (
     mutate: (obj: any) => void,
 ) => {
     let formData = new FormData()
-    if (position == null) {
-        return toast("Location cannot be null", { type: "success" })
-    }
     if (imageFile == null) {
         return toast("Cover cannot be null", { type: "success" })
     }
@@ -23,8 +20,8 @@ export const methodHandelSubmitSalons = (
     formData.append("type", 'salons');
     formData.append("status", '1');
     formData.append("image", typeof imageFile === 'object' ? imageFile : null);
-    formData.append("latitude", position[0]);
-    formData.append("longitude", position[1]);
+    formData.append("latitude", position?.[0]);
+    formData.append("longitude", position?.[1]);
     formData.append("svg", '');
     mutate(formData)
 }
