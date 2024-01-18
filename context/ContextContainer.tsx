@@ -8,6 +8,7 @@ export const ContextContainer = React.createContext<any>({})
     const [visibleDetail , setVisibleDetail] = useState<boolean>(false)
     const [salonId , setSalonId] = useState<number>(0)
     const [isAuth , setIsAuth] = useState<boolean>(false)
+    const [userInfo , setUserInfo] = useState<any>(null)
     const [visibleMobileNav , setVisibleMobileNav] = useState<boolean>(false)
 
 
@@ -21,6 +22,8 @@ export const ContextContainer = React.createContext<any>({})
             setSalonId ,
             isAuth , 
             setIsAuth ,
+            userInfo , 
+            setUserInfo ,
             visibleMobileNav ,
             setVisibleMobileNav
         }}>

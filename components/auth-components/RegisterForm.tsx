@@ -7,7 +7,7 @@ import { ContextContainer } from "@/context/ContextContainer";
 export const RegisterForm = ({setVisibleModal}:FormAuthType) => {
     const formRef: any = useRef()
     const Ctx = useContext(ContextContainer)
-    const { isLoading, mutate } = useRegister(formRef , setVisibleModal , Ctx.setIsAuth)
+    const { isLoading, mutate } = useRegister(formRef , setVisibleModal , Ctx.setIsAuth , Ctx.setUserInfo)
 
 
     const handelRegister = (e: any) => {

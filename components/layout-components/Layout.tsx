@@ -17,6 +17,7 @@ const Layout = ({ children }: any) => {
 
     const CheckAuth = async () => {
         if (CheckIsLogin()) {
+            Ctx.setUserInfo(JSON.parse(String(localStorage.getItem('user'))))
             if (Ctx.isAuth == false) {
                 Ctx.setIsAuth(true)
             }

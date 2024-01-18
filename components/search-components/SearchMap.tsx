@@ -34,7 +34,7 @@ export default function SearchMap({ listPlace, handelViweDetail }: IProps) {
                 <MapContainer
                     id="map"
                     center={[25.288318084295074, 55.31393051147462]}
-                    zoom={11}
+                    zoom={12}
                     doubleClickZoom={false}
                     closePopupOnClick={false}
                     trackResize={false}

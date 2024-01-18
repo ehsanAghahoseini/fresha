@@ -1,4 +1,6 @@
-import { CSvgArrow, CSvgInsta, CSvgLogo, CSvgTelegram, CSvgTikTok, CSvgWhatsApp } from "@/icons"
+import dynamic from "next/dynamic";
+import { CSvgArrow, CSvgInsta, CSvgTelegram, CSvgTikTok, CSvgWhatsApp } from "@/icons"
+const CSvgLogo = dynamic(() => import("@/icons/CSvgLogo"), { ssr: false });
 
  const Footer = () => {
 

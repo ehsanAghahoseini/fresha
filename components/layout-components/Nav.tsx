@@ -1,9 +1,12 @@
-import { CSvgLogo, CSvgMore } from "@/icons"
+import { CSvgMore } from "@/icons"
 import { useContext, useEffect, useMemo, useState } from "react";
 import ModalAuth from "@/components/auth-components/ModalAuth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ContextContainer } from "@/context/ContextContainer";
+import dynamic from "next/dynamic";
+const CSvgLogo = dynamic(() => import("@/icons/CSvgLogo"), { ssr: false });
+
 
 const Nav = () => {
     const Ctx = useContext(ContextContainer)

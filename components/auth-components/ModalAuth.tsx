@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { CSvgLogo } from "@/icons";
 import { ModalAuthType } from "@/types/auth-types";
 import dynamic from 'next/dynamic'
 
+const CSvgLogo = dynamic(() => import("@/icons/CSvgLogo"), { ssr: false });
 const CModal = dynamic(() => import("@/components/widget/CModal"), { ssr: false });
 const CImage = dynamic(() => import("@/components/widget").then((mod) => mod.CImage), { ssr: false });
 const LoginForm = dynamic(() => import('./LoginForm'), { ssr: false })
@@ -29,7 +29,7 @@ const RegisterForm = dynamic(() => import('./RegisterForm'), { ssr: false })
                             <div className='w-full flex flex-col m-auto max-w-[400px] '>
                                 <div className='w-full flex flex-col items-center justify-center '>
                                     <CSvgLogo className="md:w-[80px] w-[70px]" />
-                                    <span className='my-2'>Welcome to Fresha</span>
+                                    <span className='my-2'>Welcome to Mwa3id</span>
                                     <div className="w-[200px] h-[40px] flex items-center justify-between rounded-full border shadow mt-4 p-1">
                                         <button onClick={() => handelChangeAuth('login')} type="button" className={`w-full h-full bg-pos-100 rounded-full flex items-center justify-center transition-all text-xs ${authType == 'login' ? 'bg-fresh-25 text-white ' : 'bg-white '}`}>Login</button>
                                         <button onClick={() => handelChangeAuth('register')} type="button" className={`w-full h-full bg-pos-100 rounded-full flex items-center justify-center transition-all text-xs ${authType == 'register' ? 'bg-fresh-25 text-white ' : 'bg-white'}`}>Register</button>

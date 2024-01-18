@@ -7,7 +7,7 @@ import { ContextContainer } from "@/context/ContextContainer";
 export const LoginForm = ({setVisibleModal}:any) => {
     const formRef: any = useRef()
     const Ctx = useContext(ContextContainer)
-    const { isLoading, mutate } = useLogin(formRef , setVisibleModal , Ctx.setIsAuth)
+    const { isLoading, mutate } = useLogin(formRef , setVisibleModal , Ctx.setIsAuth , Ctx.setUserInfo)
 
 
     const handelLogin = (e: any) => {

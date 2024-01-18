@@ -12,7 +12,8 @@ import { toast } from "react-toastify";
 export const useLogin = (
   formRef: any ,
   setVisibleModal:(bol:boolean)=>void ,
-  setIsAuth:(bol:boolean)=>void
+  setIsAuth:(bol:boolean)=>void ,
+  setUserInfo:(obj:any)=>void ,
 ) => {
   return useMutation({
     mutationFn: () => LoginApi(formRef.current['email'].value, formRef.current['password'].value),
@@ -23,6 +24,7 @@ export const useLogin = (
         localStorage.setItem('token', res.data.token)
         setVisibleModal(false)
         setIsAuth(true)
+        setUserInfo(res.data.user)
       }
       else {
         toast(res.data.message, { type: "error" })
@@ -39,7 +41,8 @@ export const useLogin = (
 export const useRegister = (
   formRef: any,
   setVisibleModal:(bol:boolean)=>void ,
-  setIsAuth:(bol:boolean)=>void
+  setIsAuth:(bol:boolean)=>void ,
+  setUserInfo:(obj:any)=>void ,
 ) => {
   return useMutation({
     mutationFn: () => RegisterApi(
@@ -55,6 +58,7 @@ export const useRegister = (
         localStorage.setItem('token', res.data.token)
         setVisibleModal(false)
         setIsAuth(true)
+        setUserInfo(res.data.user)
       }
       else {
         toast(res.data.message, { type: "error" })

@@ -15,8 +15,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Fresha</title>
-        <meta name="description" content="Fresha" />
+        <title>Mwa3id</title>
+        <meta name="description" content="Mwa3id" />
         <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport' />
       </Head>
       <ContextContainerModels>
